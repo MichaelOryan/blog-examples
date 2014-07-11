@@ -1,0 +1,47 @@
+/*
+    Examples of Swapping values.
+    TODO:
+    Examples for the following functions
+        void swap_by_index(int, int, array);
+        void swap_by_reference(string &, string &);
+        void swap_fail_by_value(string &, string &);
+*/
+
+#include <iostream>
+#include <string>
+
+template<typename T>
+void swap(T &, T &);
+
+int main()
+{
+    /* Some examples of using the swap template */
+    /* Swap a string */
+    std::string array[2] = {"World!", "Hello"};
+    std::cout << array[0] << " " << array[1] << std::endl;
+    std::cout << "Swap!" << std::endl;
+    swap(array[0], array[1]);
+    std::cout << array[0] << " " << array[1] << std::endl;
+    
+    /* Swap ints with the same function */
+    int a = 1, b = 100;
+    std::cout << "\na is " << a << " b is " << b << std::endl;
+    std::cout << "Swap!" << std::endl;
+    swap(a, b);
+    std::cout << "a is " << a << " b is " << b << std::endl;
+    
+    /* Swap floats with the same function */
+    float fa = 1.6, fb = 234.56;
+    std::cout << "\nfa: " << fa << " fb: " << fb << std::endl;
+    swap(fa, fb);
+    std::cout << "Swap!" << std::endl;
+    std::cout << "fa: " << fa << " fb: " << fb << std::endl;
+    return 0;
+}
+
+template<typename T>
+void swap(T &a, T &b){
+    T tmp = a;
+    a = b;
+    b = tmp;
+}
