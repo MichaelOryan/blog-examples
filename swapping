@@ -5,7 +5,8 @@
         void swap_by_index(int, int, array);
         void swap_by_reference(string &, string &);
         void swap_fail_by_value(string &, string &);
-*/
+    
+    Looks like you can use std::swap(a, b); in the algorithm library.
 
 #include <iostream>
 #include <string>
